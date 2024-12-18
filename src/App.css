@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background: #212128;
+}
+
+#root,
+.app,
+.quote-container,
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.quote-container {
+  width: 38.8125rem;
+  height: 30rem;
+  background: #E4E4E4;
+  padding: 2rem 4rem;
+  gap: 3rem;
+  border-radius: 1.25rem;
+}
+
+.quote-container p {
+  text-align: left;
+  font: normal 400 1.25rem/normal 'Arial', sans-serif;
+}
+
+.quote-container h1 {
+  font: normal 600 2.5rem/normal 'Roboto Serif', sans-serif;
+}
+
+.quote-container h3 {
+  font: normal 700 1.25rem/normal 'Arial', sans-serif;
+}
+
+.content {
+  gap: 1rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2.75rem;
+}
+
+.ref-link, 
+.footer {
+  color: #E4E4E4;
+  font: normal 400 1.5rem/normal 'Arial', sans-serif;
+}
+
+.btn-regenerate {
+  width: 11.375rem;
+  height: 3.125rem;
+  border: 1px solid #E4E4E4;
+  background: #212128;
+  border-radius: 0.625rem;
+  color: #E4E4E4;
+  font: normal 400 1.25rem/normal 'Arial', sans-serif;
+}
