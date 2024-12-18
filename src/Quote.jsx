@@ -13,18 +13,14 @@ export default function Quote() {
 
     const generateQuote = async () => {
         try {
-            const response = await fetch('/stoic-quote');
+            const response = await fetch('/api/quotes');
             if(!response.ok) {
                 setCurrentQuote({ author: 'Error', text: 'Error fetching quote! (Response not OK)'});
                 return;
             }
             const result = await response.json();
-            let { author, quote } = result.data;
-            // Remove trailing '@' character in the data
-            if (quote.endsWith('@')) quote = quote.slice(0, -1).trim();
-            if (author.length == 0) author = 'Unknown';
-            
-            setCurrentQuote({ quoteAuthor: author, text: quote });
+            const { quoteAuthor, text } = result;
+            setCurrentQuote({ quoteAuthor, text });
         } catch (err) {
             setCurrentQuote({ quoteAuthor: 'Error', text: `Error fetching quote! ${err.message}`});
         }
