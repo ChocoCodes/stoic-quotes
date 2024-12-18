@@ -8,14 +8,14 @@ export default function Quote() {
     // Fetch data when the page first loads
     // Empty array ensures that this effect will run only once
     useEffect(() => {
-        fetchQuote();
+        generateQuote();
     }, []);
 
-    const fetchQuote = async () => {
+    const generateQuote = async () => {
         try {
             const response = await fetch('/stoic-quote');
             if(!response.ok) {
-                setQuote({ author: 'Error', text: 'Error fetching quote! (Response not OK)'});
+                setCurrentQuote({ author: 'Error', text: 'Error fetching quote! (Response not OK)'});
                 return;
             }
             const result = await response.json();
@@ -38,7 +38,7 @@ export default function Quote() {
                 <p>{currentQuote.text}</p>
                 <h3>{currentQuote.quoteAuthor}</h3>
             </div>
-            <GenerateButton fetchData={fetchQuote}/>
+            <GenerateButton fetchData={generateQuote}/>
         </div>
     )
 }
